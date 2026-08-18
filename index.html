@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- Control de Caché para refresco automático en cambios -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <title>Supermercado SER Propatria — Diseño Arquitectónico e Interiorismo</title>
   <meta name="description" content="Propuesta arquitectónica, diseño de interiores comercial, planimetría 2D y visualización 3D para Supermercado SER en Propatria, Caracas, Venezuela. Por José González.">
   <meta name="keywords" content="Supermercado SER, Propatria, Caracas, Arquitectura Comercial, Interiorismo, Renders 3D, Planos DWG, José González, Retail Design">
@@ -13,7 +19,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Supermercado SER Propatria — Arquitectura e Interiorismo">
   <meta property="og:description" content="Recorrido 3D, planos en 2 niveles y renders de alta definición del Supermercado SER Propatria en Caracas.">
-  <meta property="og:image" content="imagenes/Fachada.webp">
+  <meta property="og:image" content="imagenes/Fachada.webp?v=1.2">
 
   <!-- Google Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,13 +141,13 @@
     }
 
     .section {
-      padding: 6rem 0;
+      padding: 5.5rem 0;
       position: relative;
     }
 
     @media (max-width: 768px) {
       .section {
-        padding: 4rem 0;
+        padding: 3.8rem 0;
       }
       .container {
         padding-left: 1.2rem;
@@ -152,7 +158,7 @@
     .section-header {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 3.5rem auto;
+      margin: 0 auto 3rem auto;
     }
 
     .section-badge {
@@ -168,7 +174,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .section-title {
@@ -176,7 +182,7 @@
       font-weight: 800;
       letter-spacing: -0.02em;
       color: #FFFFFF;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       line-height: 1.2;
     }
 
@@ -680,7 +686,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
 
     @media (max-width: 992px) {
@@ -1068,7 +1074,7 @@
       color: var(--text-muted);
     }
 
-    /* Descargas Grid */
+    /* Descargas Hub */
     .downloads-hub {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
@@ -1722,7 +1728,7 @@
        ========================================================================== -->
   <section class="hero-section" id="hero">
     <div class="hero-bg-container">
-      <img src="imagenes/Fachada.webp" alt="Fachada Supermercado SER Propatria" class="hero-bg-img" fetchpriority="high">
+      <img src="imagenes/Fachada.webp?v=1.2" alt="Fachada Supermercado SER Propatria" class="hero-bg-img" fetchpriority="high">
       <div class="hero-overlay"></div>
     </div>
 
@@ -1802,12 +1808,9 @@
        ========================================================================== -->
   <section class="section" id="ficha">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 2.5rem;">
         <div class="section-badge">Memoria Descriptiva</div>
         <h2 class="section-title">Ficha Técnica del <span>Proyecto</span></h2>
-        <p class="section-desc">
-          Conceptualización y desarrollo arquitectónico integral para un espacio comercial de retail de alto tráfico, enfocado en la ergonomía de circulación, sectorización por rubros y una experiencia de compra premium.
-        </p>
       </div>
 
       <!-- Métricas y Datos Clave -->
@@ -1866,7 +1869,7 @@
           <div class="spec-info">
             <div class="spec-label">Zonificación</div>
             <div class="spec-value">Áreas Especializadas</div>
-            <div class="spec-subtext">Charcutería, Frutas, Secos y Cajas</div>
+            <div class="spec-subtext">Charcutería, frutas, cajas, etc.</div>
           </div>
         </div>
 
@@ -1923,7 +1926,7 @@
             </li>
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Góndolas de Autoservicio:</strong> Pasillos amplios (1.80m+) calculados para tránsito simultáneo de carritos de compras.</div>
+              <div><strong>Góndolas de Autoservicio:</strong> Pasillos de 1,2m calculados para el tránsito y flujo de clientes.</div>
             </li>
           </ul>
         </div>
@@ -1934,7 +1937,7 @@
               <span class="level-number">02</span>
               <div>
                 <h3 class="level-title">Nivel 2 — Planta Alta</h3>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Perecederos, Frescos & Charcutería</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Autoservicios, Frutería y Área de Charcutería</span>
               </div>
             </div>
             <span class="level-badge">Planta Alta</span>
@@ -1942,15 +1945,15 @@
           <ul class="level-features-list">
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Área de Charcutería & Embutidos:</strong> Mostradores refrigerados con vitrinas panorámicas y zona de preparación interna.</div>
+              <div><strong>Área de Charcutería:</strong> Mostradores refrigerados con vitrinas y zona de atención.</div>
             </li>
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Sector Frutería y Frescos:</strong> Mobiliario escalonado en madera y metal con iluminación cálida focalizada.</div>
+              <div><strong>Sector Frutería:</strong> Exhibidores para frutas y productos frescos.</div>
             </li>
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <div><strong>Islas Centrales & Autoservicio:</strong> Exhibición de productos gourmet, snacks y bebidas de alta demanda.</div>
+              <div><strong>Islas & Autoservicios:</strong> Módulos de autoservicio e islas de exhibición.</div>
             </li>
           </ul>
         </div>
@@ -1973,10 +1976,10 @@
 
       <div class="video-wrapper-card">
         <div class="video-container">
-          <video controls poster="imagenes/Fachada.webp" preload="metadata" playsinline>
-            <source src="videos/Render Propatria.mp4" type="video/mp4">
+          <video controls poster="imagenes/Fachada.webp?v=1.2" preload="metadata" playsinline>
+            <source src="videos/Render Propatria.mp4?v=1.2" type="video/mp4">
             Tu navegador no soporta el reproductor de video HTML5. Puedes 
-            <a href="videos/Render Propatria.mp4" download style="color: var(--gold-light); text-decoration: underline;">descargar el video aquí</a>.
+            <a href="videos/Render Propatria.mp4?v=1.2" download style="color: var(--gold-light); text-decoration: underline;">descargar el video aquí</a>.
           </video>
         </div>
 
@@ -1993,7 +1996,7 @@
           </div>
 
           <div class="video-actions">
-            <a href="videos/Render Propatria.mp4" download="Render Supermercado SER Propatria.mp4" class="btn btn-outline" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+            <a href="videos/Render Propatria.mp4?v=1.2" download="Render Supermercado SER Propatria.mp4" class="btn btn-outline" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -2042,19 +2045,19 @@
 
         <!-- Contenido Tab Nivel 1 -->
         <div class="tab-content active" id="tab-nivel-1" role="tabpanel">
-          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 1.png', 'Plano Arquitectónico 2D — Nivel 1', 'Distribución de Planta Baja: Acceso, Paquetería, Batería de Cajas y Pasillos de Autoservicio')">
+          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 1.png?v=1.2', 'Plano Arquitectónico 2D — Nivel 1', 'Distribución de Planta Baja: Acceso, Paquetería, Batería de Cajas y Pasillos de Autoservicio')">
             <div class="blueprint-overlay-tag">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               Ver en Pantalla Completa
             </div>
-            <img src="imagenes/Vista Plano 2D Nivel 1.png" alt="Vista Plano 2D Nivel 1 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
+            <img src="imagenes/Vista Plano 2D Nivel 1.png?v=1.2" alt="Vista Plano 2D Nivel 1 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
           </div>
           <div class="blueprint-bottom-info">
             <div>
               <div class="blueprint-title-text">Nivel 1: Zonificación de Acceso, Autoservicio y Cajas</div>
               <div class="blueprint-sub-text">Dimensiones generales, modulación estructural y circulaciones de planta baja.</div>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg" download class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg?v=1.2" download class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">
               Descargar DWG Nivel 1
             </a>
           </div>
@@ -2062,19 +2065,19 @@
 
         <!-- Contenido Tab Nivel 2 -->
         <div class="tab-content" id="tab-nivel-2" role="tabpanel">
-          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 2.png', 'Plano Arquitectónico 2D — Nivel 2', 'Distribución de Planta Alta: Charcutería, Frutería, Islas y Autoservicio Superior')">
+          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 2.png?v=1.2', 'Plano Arquitectónico 2D — Nivel 2', 'Distribución de Planta Alta: Autoservicios, Frutería y Área de Charcutería')">
             <div class="blueprint-overlay-tag">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               Ver en Pantalla Completa
             </div>
-            <img src="imagenes/Vista Plano 2D Nivel 2.png" alt="Vista Plano 2D Nivel 2 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
+            <img src="imagenes/Vista Plano 2D Nivel 2.png?v=1.2" alt="Vista Plano 2D Nivel 2 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
           </div>
           <div class="blueprint-bottom-info">
             <div>
-              <div class="blueprint-title-text">Nivel 2: Zonificación de Charcutería, Frutería e Islas</div>
-              <div class="blueprint-sub-text">Mobiliario comercial, mostradores frigoríficos y góndolas superiores.</div>
+              <div class="blueprint-title-text">Nivel 2: Autoservicios, Frutería y Área de Charcutería</div>
+              <div class="blueprint-sub-text">Mobiliario comercial, mostradores frigoríficos, islas y autoservicio.</div>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg" download class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">
+            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg?v=1.2" download class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">
               Descargar DWG Nivel 2
             </a>
           </div>
@@ -2102,7 +2105,7 @@
               </div>
               <p class="dl-desc">Plano general unificado con plantas, cotas, zonificación y membrete oficial listo para imprimir.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf" download="Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf" class="btn btn-gold dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf?v=1.2" download="Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf" class="btn btn-gold dl-btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               Descargar PDF Completo
             </a>
@@ -2120,7 +2123,7 @@
               </div>
               <p class="dl-desc">Archivo CAD editable con capas, bloques de equipamiento y ejes de ambos niveles.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2.dwg" download="Supermercado Ser Propatria Nivel 1 y 2.dwg" class="btn btn-secondary dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2.dwg?v=1.2" download="Supermercado Ser Propatria Nivel 1 y 2.dwg" class="btn btn-secondary dl-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               DWG Completo
             </a>
@@ -2138,7 +2141,7 @@
               </div>
               <p class="dl-desc">Detalle específico de planta baja: accesos, paquetería, cajas y autoservicio.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg" download="Supermercado Ser Propatria Nivel 1.dwg" class="btn btn-secondary dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg?v=1.2" download="Supermercado Ser Propatria Nivel 1.dwg" class="btn btn-secondary dl-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               DWG Nivel 1
             </a>
@@ -2154,9 +2157,9 @@
                   <div style="font-size: 0.75rem; color: var(--text-muted);">Planta Alta</div>
                 </div>
               </div>
-              <p class="dl-desc">Detalle específico de planta alta: charcutería, frutería, islas y servicios.</p>
+              <p class="dl-desc">Detalle específico de planta alta: autoservicios, frutería, islas y charcutería.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg" download="Supermercado Ser Propatria Nivel 2.dwg" class="btn btn-secondary dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg?v=1.2" download="Supermercado Ser Propatria Nivel 2.dwg" class="btn btn-secondary dl-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               DWG Nivel 2
             </a>
@@ -2181,8 +2184,8 @@
 
       <div class="gallery-grid" id="galleryGrid">
         <!-- 1. Fachada Principal (Destacada a 2 columnas) -->
-        <div class="gallery-item featured" data-index="0" data-src="imagenes/Fachada.webp" data-title="Fachada Principal e Imagen Exterior" data-desc="Diseño de marquesina moderna, iluminación perimetral y acceso frontal en Propatria">
-          <img src="imagenes/Fachada.webp" alt="Fachada Principal Supermercado SER Propatria" loading="lazy">
+        <div class="gallery-item featured" data-index="0" data-src="imagenes/Fachada.webp?v=1.2" data-title="Fachada Principal e Imagen Exterior" data-desc="Diseño de marquesina moderna, iluminación perimetral y acceso frontal en Propatria">
+          <img src="imagenes/Fachada.webp?v=1.2" alt="Fachada Principal Supermercado SER Propatria" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Exterior • Fachada Principal</span>
             <h3 class="gallery-title">Fachada Principal e Imagen Exterior</h3>
@@ -2193,8 +2196,8 @@
         </div>
 
         <!-- 2. Área autoservicio Nivel 1 -->
-        <div class="gallery-item" data-index="1" data-src="imagenes/Area autoservicio Nivel 1.webp" data-title="Área de Autoservicio — Nivel 1" data-desc="Distribución longitudinal de góndolas y estanterías en planta baja">
-          <img src="imagenes/Area autoservicio Nivel 1.webp" alt="Área autoservicio Nivel 1" loading="lazy">
+        <div class="gallery-item" data-index="1" data-src="imagenes/Area autoservicio Nivel 1.webp?v=1.2" data-title="Área de Autoservicio — Nivel 1" data-desc="Distribución longitudinal de góndolas y estanterías en planta baja">
+          <img src="imagenes/Area autoservicio Nivel 1.webp?v=1.2" alt="Área autoservicio Nivel 1" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Planta Baja</span>
             <h3 class="gallery-title">Área de Autoservicio — Nivel 1</h3>
@@ -2205,8 +2208,8 @@
         </div>
 
         <!-- 3. Paquetería y cajas -->
-        <div class="gallery-item" data-index="2" data-src="imagenes/Paqueteria y cajas.webp" data-title="Paquetería y Batería de Cajas" data-desc="Puntos de cobro con iluminación lineal y área de custodia de paquetería">
-          <img src="imagenes/Paqueteria y cajas.webp" alt="Paquetería y cajas" loading="lazy">
+        <div class="gallery-item" data-index="2" data-src="imagenes/Paqueteria y cajas.webp?v=1.2" data-title="Paquetería y Batería de Cajas" data-desc="Puntos de cobro con iluminación lineal y área de custodia de paquetería">
+          <img src="imagenes/Paqueteria y cajas.webp?v=1.2" alt="Paquetería y cajas" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Salida y Cobro</span>
             <h3 class="gallery-title">Paquetería y Batería de Cajas</h3>
@@ -2217,8 +2220,8 @@
         </div>
 
         <!-- 4. Inicio pasillos -->
-        <div class="gallery-item" data-index="3" data-src="imagenes/Inicio pasillos.webp" data-title="Inicio de Pasillos Principales" data-desc="Perspectiva de acceso al área comercial y señalética orientativa de pasillos">
-          <img src="imagenes/Inicio pasillos.webp" alt="Inicio pasillos" loading="lazy">
+        <div class="gallery-item" data-index="3" data-src="imagenes/Inicio pasillos.webp?v=1.2" data-title="Inicio de Pasillos Principales" data-desc="Perspectiva de acceso al área comercial y señalética orientativa de pasillos">
+          <img src="imagenes/Inicio pasillos.webp?v=1.2" alt="Inicio pasillos" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Circulación</span>
             <h3 class="gallery-title">Inicio de Pasillos Principales</h3>
@@ -2229,8 +2232,8 @@
         </div>
 
         <!-- 5. Pasillo 1 vista central -->
-        <div class="gallery-item" data-index="4" data-src="imagenes/Pasillo 1 vista central.webp" data-title="Pasillo 1 — Perspectiva Central" data-desc="Visual simétrica con modulación de estanterías metálicas y plafones iluminados">
-          <img src="imagenes/Pasillo 1 vista central.webp" alt="Pasillo 1 vista central" loading="lazy">
+        <div class="gallery-item" data-index="4" data-src="imagenes/Pasillo 1 vista central.webp?v=1.2" data-title="Pasillo 1 — Perspectiva Central" data-desc="Visual simétrica con modulación de estanterías metálicas y plafones iluminados">
+          <img src="imagenes/Pasillo 1 vista central.webp?v=1.2" alt="Pasillo 1 vista central" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Pasillo 1</span>
             <h3 class="gallery-title">Pasillo 1 — Perspectiva Central</h3>
@@ -2241,8 +2244,8 @@
         </div>
 
         <!-- 6. Pasillo 4 vista central -->
-        <div class="gallery-item" data-index="5" data-src="imagenes/Pasillo 4 vista central.webp" data-title="Pasillo 4 — Perspectiva Central" data-desc="Visual de exhibición de secos y productos envasados con acabado industrial elegante">
-          <img src="imagenes/Pasillo 4 vista central.webp" alt="Pasillo 4 vista central" loading="lazy">
+        <div class="gallery-item" data-index="5" data-src="imagenes/Pasillo 4 vista central.webp?v=1.2" data-title="Pasillo 4 — Perspectiva Central" data-desc="Visual de exhibición de secos y productos envasados con acabado industrial elegante">
+          <img src="imagenes/Pasillo 4 vista central.webp?v=1.2" alt="Pasillo 4 vista central" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Pasillo 4</span>
             <h3 class="gallery-title">Pasillo 4 — Perspectiva Central</h3>
@@ -2253,8 +2256,8 @@
         </div>
 
         <!-- 7. Vista general Nivel 2 -->
-        <div class="gallery-item" data-index="6" data-src="imagenes/Vista general Nivel 2.webp" data-title="Vista General Panorámica — Nivel 2" data-desc="Perspectiva amplia de planta alta mostrando charcutería, frutería e islas de atención">
-          <img src="imagenes/Vista general Nivel 2.webp" alt="Vista general Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="6" data-src="imagenes/Vista general Nivel 2.webp?v=1.2" data-title="Vista General Panorámica — Nivel 2" data-desc="Perspectiva amplia de planta alta mostrando autoservicios, frutería y área de charcutería">
+          <img src="imagenes/Vista general Nivel 2.webp?v=1.2" alt="Vista general Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Planta Alta</span>
             <h3 class="gallery-title">Vista General Panorámica — Nivel 2</h3>
@@ -2265,8 +2268,8 @@
         </div>
 
         <!-- 8. Área de charcutería Nivel 2 -->
-        <div class="gallery-item" data-index="7" data-src="imagenes/Area de charcuteria Nivel 2.webp" data-title="Área de Charcutería y Atención — Nivel 2" data-desc="Barra de atención personalizada con vitrinas panorámicas de acero inoxidable">
-          <img src="imagenes/Area de charcuteria Nivel 2.webp" alt="Área de charcutería Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="7" data-src="imagenes/Area de charcuteria Nivel 2.webp?v=1.2" data-title="Área de Charcutería y Atención — Nivel 2" data-desc="Barra de atención con vitrinas de frío y zona de corte">
+          <img src="imagenes/Area de charcuteria Nivel 2.webp?v=1.2" alt="Área de charcutería Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Charcutería</span>
             <h3 class="gallery-title">Área de Charcutería y Atención — Nivel 2</h3>
@@ -2277,11 +2280,11 @@
         </div>
 
         <!-- 9. Autoservicio e islas Nivel 2 -->
-        <div class="gallery-item" data-index="8" data-src="imagenes/Autoservicio e islas Nivel 2.webp" data-title="Autoservicio e Islas Centrales — Nivel 2" data-desc="Islas de exhibición central para productos destacados y fácil maniobrabilidad">
-          <img src="imagenes/Autoservicio e islas Nivel 2.webp" alt="Autoservicio e islas Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="8" data-src="imagenes/Autoservicio e islas Nivel 2.webp?v=1.2" data-title="Autoservicio e Islas — Nivel 2" data-desc="Islas de exhibición y módulos de autoservicio para fácil maniobrabilidad">
+          <img src="imagenes/Autoservicio e islas Nivel 2.webp?v=1.2" alt="Autoservicio e islas Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
-            <span class="gallery-tag">Nivel 2 • Islas Centrales</span>
-            <h3 class="gallery-title">Autoservicio e Islas Centrales — Nivel 2</h3>
+            <span class="gallery-tag">Nivel 2 • Islas</span>
+            <h3 class="gallery-title">Autoservicio e Islas — Nivel 2</h3>
           </div>
           <div class="gallery-zoom-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
@@ -2289,8 +2292,8 @@
         </div>
 
         <!-- 10. Frutería y autoservicio Nivel 2 -->
-        <div class="gallery-item" data-index="9" data-src="imagenes/Fruteria y autoservicio Nivel 2.webp" data-title="Frutería y Autoservicio — Nivel 2" data-desc="Exhibidores ergonómicos para frutas y vegetales frescos con tonos cálidos y texturas orgánicas">
-          <img src="imagenes/Fruteria y autoservicio Nivel 2.webp" alt="Frutería y autoservicio Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="9" data-src="imagenes/Fruteria y autoservicio Nivel 2.webp?v=1.2" data-title="Frutería y Autoservicio — Nivel 2" data-desc="Exhibición de frutas, vegetales frescos y autoservicio">
+          <img src="imagenes/Fruteria y autoservicio Nivel 2.webp?v=1.2" alt="Frutería y autoservicio Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Frutería</span>
             <h3 class="gallery-title">Frutería y Autoservicio — Nivel 2</h3>
@@ -2301,8 +2304,8 @@
         </div>
 
         <!-- 11. Interior A Área de charcutería Nivel 2 -->
-        <div class="gallery-item" data-index="10" data-src="imagenes/Interior A Area de charcuteria Nivel 2.webp" data-title="Detalle Interior A — Área de Charcutería" data-desc="Vista posterior de zona de corte, preparación, revestimientos higiénicos y cámaras">
-          <img src="imagenes/Interior A Area de charcuteria Nivel 2.webp" alt="Interior A Área de charcutería Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="10" data-src="imagenes/Interior A Area de charcuteria Nivel 2.webp?v=1.2" data-title="Detalle Interior A — Área de Charcutería" data-desc="Vista posterior de zona de corte, preparación, revestimientos higiénicos y cámaras">
+          <img src="imagenes/Interior A Area de charcuteria Nivel 2.webp?v=1.2" alt="Interior A Área de charcutería Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Detalle Charcutería A</span>
             <h3 class="gallery-title">Detalle Interior A — Área de Charcutería</h3>
@@ -2313,8 +2316,8 @@
         </div>
 
         <!-- 12. Interior B Área de charcutería Nivel 2 -->
-        <div class="gallery-item" data-index="11" data-src="imagenes/Interior B Area de charcuteria Nivel 2.webp" data-title="Detalle Interior B — Área de Charcutería" data-desc="Equipamiento gastronómico especializado y modulación de almacenamiento refrigerado">
-          <img src="imagenes/Interior B Area de charcuteria Nivel 2.webp" alt="Interior B Área de charcutería Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="11" data-src="imagenes/Interior B Area de charcuteria Nivel 2.webp?v=1.2" data-title="Detalle Interior B — Área de Charcutería" data-desc="Equipamiento gastronómico especializado y modulación de almacenamiento refrigerado">
+          <img src="imagenes/Interior B Area de charcuteria Nivel 2.webp?v=1.2" alt="Interior B Área de charcutería Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Detalle Charcutería B</span>
             <h3 class="gallery-title">Detalle Interior B — Área de Charcutería</h3>
@@ -2441,6 +2444,23 @@
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      /* ------------------------------------------------------------------------
+         0. AUTO-REFRESCO DE CACHÉ EN RECURSOS DINÁMICOS
+         ------------------------------------------------------------------------ */
+      const currentBuild = '20260818_1615';
+      const storedBuild = localStorage.getItem('ser_propatria_build');
+      if (storedBuild && storedBuild !== currentBuild) {
+        localStorage.setItem('ser_propatria_build', currentBuild);
+        // Si hay una nueva versión detectada, recarga limpia
+        if ('caches' in window) {
+          caches.keys().then(names => {
+            names.forEach(name => caches.delete(name));
+          });
+        }
+      } else {
+        localStorage.setItem('ser_propatria_build', currentBuild);
+      }
+
       /* ------------------------------------------------------------------------
          1. SCROLL HEADER & SCROLL TO TOP
          ------------------------------------------------------------------------ */
