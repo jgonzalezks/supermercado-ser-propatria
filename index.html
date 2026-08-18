@@ -556,9 +556,10 @@
 
     .hero-stats-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 520px;
       gap: 1.2rem;
-      margin: 2.5rem 0;
+      margin: 2.5rem auto;
       background: rgba(18, 20, 26, 0.75);
       border: 1px solid var(--border-subtle);
       backdrop-filter: blur(12px);
@@ -1761,16 +1762,8 @@
           <div class="hero-stat-label">Niveles Comerciales</div>
         </div>
         <div class="hero-stat-card">
-          <div class="hero-stat-val">12+</div>
-          <div class="hero-stat-label">Renders Fotorrealistas</div>
-        </div>
-        <div class="hero-stat-card">
-          <div class="hero-stat-val">3D</div>
-          <div class="hero-stat-label">Recorrido Virtual</div>
-        </div>
-        <div class="hero-stat-card">
-          <div class="hero-stat-val">CAD</div>
-          <div class="hero-stat-label">Planos 2D (DWG / PDF)</div>
+          <div class="hero-stat-val">370 m²</div>
+          <div class="hero-stat-label">Superficie Total</div>
         </div>
       </div>
 
@@ -1873,7 +1866,7 @@
           <div class="spec-info">
             <div class="spec-label">Zonificación</div>
             <div class="spec-value">Áreas Especializadas</div>
-            <div class="spec-subtext">Charcutería, frutas, cajas, etc.</div>
+            <div class="spec-subtext">Exhibidores de charcutería, autoservicio, anaqueles, cajas, etc.</div>
           </div>
         </div>
 
@@ -2457,7 +2450,7 @@
       /* ------------------------------------------------------------------------
          0. AUTO-REFRESCO DE CACHÉ EN RECURSOS DINÁMICOS
          ------------------------------------------------------------------------ */
-      const currentBuild = '20260818_1620';
+      const currentBuild = '20260818_1635';
       const storedBuild = localStorage.getItem('ser_propatria_build');
       if (storedBuild && storedBuild !== currentBuild) {
         localStorage.setItem('ser_propatria_build', currentBuild);
