@@ -19,7 +19,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Supermercado SER Propatria — Arquitectura e Interiorismo">
   <meta property="og:description" content="Recorrido 3D, planos en 2 niveles y renders de alta definición del Supermercado SER Propatria en Caracas.">
-  <meta property="og:image" content="imagenes/Fachada.webp?v=1.3">
+  <meta property="og:image" content="imagenes/Fachada.webp?v=1.5">
 
   <!-- Google Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -872,21 +872,23 @@
     }
 
     /* ==========================================================================
-       SECCIÓN DE VIDEO (RECORRIDO 3D)
+       SECCIÓN DE VIDEO (RECORRIDO 3D - MAXIMIZADO)
        ========================================================================== */
     .video-wrapper-card {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-orange);
       border-radius: var(--radius-lg);
-      padding: 1rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 85, 0, 0.15);
+      padding: 0.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 85, 0, 0.2);
       position: relative;
+      max-width: 100%;
+      margin: 0 auto;
     }
 
     .video-container {
       position: relative;
       width: 100%;
-      border-radius: calc(var(--radius-lg) - 6px);
+      border-radius: calc(var(--radius-lg) - 4px);
       overflow: hidden;
       background: #000;
       aspect-ratio: 16 / 9;
@@ -896,41 +898,21 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    .video-meta-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 0.5rem 0.5rem 0.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .video-info-text {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .video-info-title {
-      font-weight: 700;
-      color: #FFFFFF;
-      font-size: 1rem;
-    }
-
-    .video-info-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .video-actions {
-      display: flex;
-      gap: 0.8rem;
+    @media (max-width: 768px) {
+      .video-wrapper-card {
+        padding: 0;
+        border-radius: var(--radius-md);
+      }
+      .video-container {
+        border-radius: var(--radius-md);
+      }
     }
 
     /* ==========================================================================
-       SECCIÓN PLANOS ARQUITECTÓNICOS (TABS & DUAL SELECTOR)
+       SECCIÓN PLANOS ARQUITECTÓNICOS (TABS & VISTA PREVIA OPTIMIZADA)
        ========================================================================== */
     .blueprints-tabs-container {
       background: var(--bg-surface);
@@ -992,8 +974,9 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--text-muted);
-      font-size: 0.8rem;
+      color: var(--brand-orange-light);
+      font-size: 0.82rem;
+      font-weight: 500;
     }
 
     .tab-content {
@@ -1012,14 +995,18 @@
     }
 
     .blueprint-preview-box {
-      background: #0E1017;
-      border: 1px solid rgba(255, 85, 0, 0.25);
+      background: #08090D;
+      border: 1px solid rgba(255, 85, 0, 0.3);
       border-radius: var(--radius-md);
       overflow: hidden;
       position: relative;
       cursor: zoom-in;
       text-align: center;
       transition: var(--transition-smooth);
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .blueprint-preview-box:hover {
@@ -1029,29 +1016,54 @@
 
     .blueprint-img {
       width: 100%;
-      max-height: 600px;
+      height: 100%;
+      min-height: 460px;
+      max-height: 720px;
       object-fit: contain;
-      background: #0A0B0E;
-      padding: 1rem;
-      transition: transform 0.4s ease;
+      background: #08090D;
+      padding: 0.5rem;
+      transition: transform 0.3s ease;
     }
 
     .blueprint-overlay-tag {
       position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      background: rgba(18, 20, 26, 0.9);
-      border: 1px solid var(--border-orange);
+      top: 1rem;
+      right: 1rem;
+      background: rgba(18, 20, 26, 0.92);
+      border: 1px solid var(--border-orange-bright);
       color: var(--brand-orange-light);
-      padding: 0.4rem 0.9rem;
+      padding: 0.45rem 1rem;
       border-radius: var(--radius-full);
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      backdrop-filter: blur(6px);
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .tab-content {
+        padding: 0.75rem 0.25rem;
+      }
+      .blueprint-preview-box {
+        min-height: 380px;
+        border-radius: var(--radius-sm);
+      }
+      .blueprint-img {
+        min-height: 360px;
+        max-height: 75vh;
+        padding: 0.1rem;
+      }
+      .blueprint-overlay-tag {
+        top: 0.6rem;
+        right: 0.6rem;
+        font-size: 0.72rem;
+        padding: 0.35rem 0.75rem;
+      }
     }
 
     .blueprint-bottom-info {
@@ -1414,38 +1426,70 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      padding: 0.5rem;
       overflow: hidden;
+      touch-action: none;
     }
 
     .lightbox-img-wrap {
-      max-width: 90vw;
-      max-height: 75vh;
+      max-width: 96vw;
+      max-height: 82vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.25s ease-out;
       cursor: grab;
       user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+      transform-origin: center center;
+      will-change: transform;
     }
 
-    .lightbox-img-wrap.zoomed {
-      cursor: grab;
-      transform: scale(2);
-    }
-
-    .lightbox-img-wrap.zoomed:active {
+    .lightbox-img-wrap.dragging {
       cursor: grabbing;
     }
 
     .lightbox-img {
-      max-width: 100%;
-      max-height: 75vh;
+      max-width: 96vw;
+      max-height: 82vh;
+      width: auto;
+      height: auto;
       object-fit: contain;
       border-radius: var(--radius-sm);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
       pointer-events: none;
-      transition: opacity 0.25s ease;
+      user-select: none;
+      -webkit-user-drag: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .lightbox-zoom-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--brand-orange-light);
+      background: rgba(255, 85, 0, 0.12);
+      border: 1px solid var(--border-orange);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      min-width: 48px;
+      text-align: center;
+    }
+
+    .lightbox-hint-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(18, 20, 26, 0.85);
+      border: 1px solid var(--border-subtle);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.4rem;
+    }
+
+    .lightbox-hint-pill svg {
+      color: var(--brand-orange);
     }
 
     .lightbox-nav-btn {
@@ -1455,7 +1499,7 @@
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      background: rgba(18, 20, 26, 0.8);
+      background: rgba(18, 20, 26, 0.85);
       border: 1px solid var(--border-orange);
       color: var(--brand-orange-light);
       display: flex;
@@ -1472,31 +1516,33 @@
       transform: translateY(-50%) scale(1.1);
     }
 
-    .lightbox-prev { left: 2rem; }
-    .lightbox-next { right: 2rem; }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
 
     @media (max-width: 768px) {
-      .lightbox-prev { left: 0.5rem; width: 42px; height: 42px; }
-      .lightbox-next { right: 0.5rem; width: 42px; height: 42px; }
-      .lightbox-topbar { padding: 1rem; }
+      .lightbox-prev { left: 0.4rem; width: 40px; height: 40px; }
+      .lightbox-next { right: 0.4rem; width: 40px; height: 40px; }
+      .lightbox-topbar { padding: 0.8rem 1rem; }
+      .lightbox-bottombar { padding: 0.8rem 1rem 1.5rem 1rem; }
+      .lightbox-btn { width: 38px; height: 38px; }
     }
 
     .lightbox-bottombar {
-      padding: 1.5rem 2rem 2rem 2rem;
+      padding: 1rem 2rem 1.5rem 2rem;
       text-align: center;
       z-index: 2010;
-      background: linear-gradient(to top, rgba(8, 9, 12, 0.95), transparent);
+      background: linear-gradient(to top, rgba(8, 9, 12, 0.98), rgba(8, 9, 12, 0.7) 70%, transparent);
     }
 
     .lightbox-caption-title {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #FFFFFF;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .lightbox-caption-desc {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
     }
 
@@ -1805,45 +1851,17 @@
        ========================================================================== -->
   <section class="section" id="video" style="background: rgba(14, 16, 22, 0.6);">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 2rem;">
         <div class="section-badge">Recorrido Animado</div>
         <h2 class="section-title">Visualización <span>Cinemática 3D</span></h2>
-        <p class="section-desc">
-          Experimenta la volumetría, iluminación arquitectónica, alturas y relaciones espaciales entre ambos niveles mediante el render animado.
-        </p>
       </div>
 
       <div class="video-wrapper-card">
         <div class="video-container">
-          <video controls poster="imagenes/Fachada.webp?v=1.4" preload="metadata" playsinline>
-            <source src="videos/Render Propatria.mp4?v=1.4" type="video/mp4">
-            Tu navegador no soporta el reproductor de video HTML5. Puedes 
-            <a href="videos/Render Propatria.mp4?v=1.4" download style="color: var(--brand-orange-light); text-decoration: underline;">descargar el video aquí</a>.
+          <video controls poster="imagenes/Fachada.webp?v=1.5" preload="metadata" playsinline>
+            <source src="videos/Render Propatria.mp4?v=1.5" type="video/mp4">
+            Tu navegador no soporta el reproductor de video HTML5.
           </video>
-        </div>
-
-        <div class="video-meta-bar">
-          <div class="video-info-text">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="23 7 16 12 23 17 23 7"></polygon>
-              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-            </svg>
-            <div>
-              <div class="video-info-title">Render Propatria — Recorrido Completo</div>
-              <div class="video-info-desc">Animación 3D en alta definición (Fachada, Nivel 1 y Nivel 2)</div>
-            </div>
-          </div>
-
-          <div class="video-actions">
-            <a href="videos/Render Propatria.mp4?v=1.4" download="Render Supermercado SER Propatria.mp4" class="btn btn-outline" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Descargar Video MP4
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -1864,8 +1882,8 @@
 
       <div class="gallery-grid" id="galleryGrid">
         <!-- 1. Fachada Principal (Destacada a 2 columnas) -->
-        <div class="gallery-item featured" data-index="0" data-src="imagenes/Fachada.webp?v=1.4" data-title="Fachada Principal e Imagen Exterior" data-desc="Diseño de marquesina moderna, iluminación perimetral y acceso frontal en Propatria">
-          <img src="imagenes/Fachada.webp?v=1.4" alt="Fachada Principal Supermercado SER Propatria" loading="lazy">
+        <div class="gallery-item featured" data-index="0" data-src="imagenes/Fachada.webp?v=1.5" data-title="Fachada Principal e Imagen Exterior" data-desc="Diseño de marquesina moderna, iluminación perimetral y acceso frontal en Propatria">
+          <img src="imagenes/Fachada.webp?v=1.5" alt="Fachada Principal Supermercado SER Propatria" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Exterior • Fachada Principal</span>
             <h3 class="gallery-title">Fachada Principal e Imagen Exterior</h3>
@@ -1875,21 +1893,9 @@
           </div>
         </div>
 
-        <!-- 2. Área autoservicio Nivel 1 -->
-        <div class="gallery-item" data-index="1" data-src="imagenes/Area autoservicio Nivel 1.webp?v=1.4" data-title="Área de Autoservicio — Nivel 1" data-desc="Distribución longitudinal de góndolas y estanterías en planta baja">
-          <img src="imagenes/Area autoservicio Nivel 1.webp?v=1.4" alt="Área autoservicio Nivel 1" loading="lazy">
-          <div class="gallery-item-overlay">
-            <span class="gallery-tag">Nivel 1 • Planta Baja</span>
-            <h3 class="gallery-title">Área de Autoservicio — Nivel 1</h3>
-          </div>
-          <div class="gallery-zoom-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-          </div>
-        </div>
-
-        <!-- 3. Paquetería y cajas -->
-        <div class="gallery-item" data-index="2" data-src="imagenes/Paqueteria y cajas.webp?v=1.4" data-title="Paquetería y Batería de Cajas" data-desc="Puntos de cobro con iluminación lineal y área de custodia de paquetería">
-          <img src="imagenes/Paqueteria y cajas.webp?v=1.4" alt="Paquetería y cajas" loading="lazy">
+        <!-- 2. Paquetería y cajas -->
+        <div class="gallery-item" data-index="1" data-src="imagenes/Paqueteria y cajas.webp?v=1.5" data-title="Paquetería y Batería de Cajas" data-desc="Puntos de cobro con iluminación lineal y área de custodia de paquetería">
+          <img src="imagenes/Paqueteria y cajas.webp?v=1.5" alt="Paquetería y cajas" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Salida y Cobro</span>
             <h3 class="gallery-title">Paquetería y Batería de Cajas</h3>
@@ -1899,9 +1905,9 @@
           </div>
         </div>
 
-        <!-- 4. Inicio pasillos -->
-        <div class="gallery-item" data-index="3" data-src="imagenes/Inicio pasillos.webp?v=1.4" data-title="Inicio de Pasillos Principales" data-desc="Perspectiva de acceso al área comercial y señalética orientativa de pasillos">
-          <img src="imagenes/Inicio pasillos.webp?v=1.4" alt="Inicio pasillos" loading="lazy">
+        <!-- 3. Inicio pasillos -->
+        <div class="gallery-item" data-index="2" data-src="imagenes/Inicio pasillos.webp?v=1.5" data-title="Inicio de Pasillos Principales" data-desc="Perspectiva de acceso al área comercial y señalética orientativa de pasillos">
+          <img src="imagenes/Inicio pasillos.webp?v=1.5" alt="Inicio pasillos" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Circulación</span>
             <h3 class="gallery-title">Inicio de Pasillos Principales</h3>
@@ -1911,9 +1917,9 @@
           </div>
         </div>
 
-        <!-- 5. Pasillo 1 vista central -->
-        <div class="gallery-item" data-index="4" data-src="imagenes/Pasillo 1 vista central.webp?v=1.4" data-title="Pasillo 1 — Perspectiva Central" data-desc="Visual simétrica con modulación de estanterías metálicas y plafones iluminados">
-          <img src="imagenes/Pasillo 1 vista central.webp?v=1.4" alt="Pasillo 1 vista central" loading="lazy">
+        <!-- 4. Pasillo 1 vista central -->
+        <div class="gallery-item" data-index="3" data-src="imagenes/Pasillo 1 vista central.webp?v=1.5" data-title="Pasillo 1 — Perspectiva Central" data-desc="Visual simétrica con modulación de estanterías metálicas y plafones iluminados">
+          <img src="imagenes/Pasillo 1 vista central.webp?v=1.5" alt="Pasillo 1 vista central" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Pasillo 1</span>
             <h3 class="gallery-title">Pasillo 1 — Perspectiva Central</h3>
@@ -1923,9 +1929,9 @@
           </div>
         </div>
 
-        <!-- 6. Pasillo 4 vista central -->
-        <div class="gallery-item" data-index="5" data-src="imagenes/Pasillo 4 vista central.webp?v=1.4" data-title="Pasillo 4 — Perspectiva Central" data-desc="Visual de exhibición de secos y productos envasados con acabado industrial elegante">
-          <img src="imagenes/Pasillo 4 vista central.webp?v=1.4" alt="Pasillo 4 vista central" loading="lazy">
+        <!-- 5. Pasillo 4 vista central -->
+        <div class="gallery-item" data-index="4" data-src="imagenes/Pasillo 4 vista central.webp?v=1.5" data-title="Pasillo 4 — Perspectiva Central" data-desc="Visual de exhibición de secos y productos envasados con acabado industrial elegante">
+          <img src="imagenes/Pasillo 4 vista central.webp?v=1.5" alt="Pasillo 4 vista central" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 1 • Pasillo 4</span>
             <h3 class="gallery-title">Pasillo 4 — Perspectiva Central</h3>
@@ -1935,9 +1941,21 @@
           </div>
         </div>
 
+        <!-- 6. Área autoservicio Nivel 1 -->
+        <div class="gallery-item" data-index="5" data-src="imagenes/Area autoservicio Nivel 1.webp?v=1.5" data-title="Área de Autoservicio — Nivel 1" data-desc="Distribución longitudinal de góndolas y estanterías en planta baja">
+          <img src="imagenes/Area autoservicio Nivel 1.webp?v=1.5" alt="Área autoservicio Nivel 1" loading="lazy">
+          <div class="gallery-item-overlay">
+            <span class="gallery-tag">Nivel 1 • Planta Baja</span>
+            <h3 class="gallery-title">Área de Autoservicio — Nivel 1</h3>
+          </div>
+          <div class="gallery-zoom-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          </div>
+        </div>
+
         <!-- 7. Vista general Nivel 2 -->
-        <div class="gallery-item" data-index="6" data-src="imagenes/Vista general Nivel 2.webp?v=1.4" data-title="Vista General Panorámica — Nivel 2" data-desc="Perspectiva amplia de planta alta mostrando autoservicios, frutería y área de charcutería">
-          <img src="imagenes/Vista general Nivel 2.webp?v=1.4" alt="Vista general Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="6" data-src="imagenes/Vista general Nivel 2.webp?v=1.5" data-title="Vista General Panorámica — Nivel 2" data-desc="Perspectiva amplia de planta alta mostrando autoservicios, frutería y área de charcutería">
+          <img src="imagenes/Vista general Nivel 2.webp?v=1.5" alt="Vista general Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Planta Alta</span>
             <h3 class="gallery-title">Vista General Panorámica — Nivel 2</h3>
@@ -1948,8 +1966,8 @@
         </div>
 
         <!-- 8. Área de charcutería Nivel 2 -->
-        <div class="gallery-item" data-index="7" data-src="imagenes/Area de charcuteria Nivel 2.webp?v=1.4" data-title="Área de Charcutería y Atención — Nivel 2" data-desc="Barra de atención con vitrinas de frío y zona de corte">
-          <img src="imagenes/Area de charcuteria Nivel 2.webp?v=1.4" alt="Área de charcutería Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="7" data-src="imagenes/Area de charcuteria Nivel 2.webp?v=1.5" data-title="Área de Charcutería y Atención — Nivel 2" data-desc="Barra de atención con vitrinas de frío y zona de corte">
+          <img src="imagenes/Area de charcuteria Nivel 2.webp?v=1.5" alt="Área de charcutería Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Charcutería</span>
             <h3 class="gallery-title">Área de Charcutería y Atención — Nivel 2</h3>
@@ -1960,8 +1978,8 @@
         </div>
 
         <!-- 9. Autoservicio e islas Nivel 2 -->
-        <div class="gallery-item" data-index="8" data-src="imagenes/Autoservicio e islas Nivel 2.webp?v=1.4" data-title="Autoservicio e Islas — Nivel 2" data-desc="Islas de exhibición y módulos de autoservicio para fácil maniobrabilidad">
-          <img src="imagenes/Autoservicio e islas Nivel 2.webp?v=1.4" alt="Autoservicio e islas Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="8" data-src="imagenes/Autoservicio e islas Nivel 2.webp?v=1.5" data-title="Autoservicio e Islas — Nivel 2" data-desc="Islas de exhibición y módulos de autoservicio para fácil maniobrabilidad">
+          <img src="imagenes/Autoservicio e islas Nivel 2.webp?v=1.5" alt="Autoservicio e islas Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Islas</span>
             <h3 class="gallery-title">Autoservicio e Islas — Nivel 2</h3>
@@ -1972,8 +1990,8 @@
         </div>
 
         <!-- 10. Frutería y autoservicio Nivel 2 -->
-        <div class="gallery-item" data-index="9" data-src="imagenes/Fruteria y autoservicio Nivel 2.webp?v=1.4" data-title="Frutería y Autoservicio — Nivel 2" data-desc="Exhibición de frutas, vegetales frescos y autoservicio">
-          <img src="imagenes/Fruteria y autoservicio Nivel 2.webp?v=1.4" alt="Frutería y autoservicio Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="9" data-src="imagenes/Fruteria y autoservicio Nivel 2.webp?v=1.5" data-title="Frutería y Autoservicio — Nivel 2" data-desc="Exhibición de frutas, vegetales frescos y autoservicio">
+          <img src="imagenes/Fruteria y autoservicio Nivel 2.webp?v=1.5" alt="Frutería y autoservicio Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Frutería</span>
             <h3 class="gallery-title">Frutería y Autoservicio — Nivel 2</h3>
@@ -1984,8 +2002,8 @@
         </div>
 
         <!-- 11. Interior A Área de charcutería Nivel 2 -->
-        <div class="gallery-item" data-index="10" data-src="imagenes/Interior A Area de charcuteria Nivel 2.webp?v=1.4" data-title="Detalle Interior A — Área de Charcutería" data-desc="Vista posterior de zona de corte, preparación, revestimientos higiénicos y cámaras">
-          <img src="imagenes/Interior A Area de charcuteria Nivel 2.webp?v=1.4" alt="Interior A Área de charcutería Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="10" data-src="imagenes/Interior A Area de charcuteria Nivel 2.webp?v=1.5" data-title="Detalle Interior A — Área de Charcutería" data-desc="Vista posterior de zona de corte, preparación, revestimientos higiénicos y cámaras">
+          <img src="imagenes/Interior A Area de charcuteria Nivel 2.webp?v=1.5" alt="Interior A Área de charcutería Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Detalle Charcutería A</span>
             <h3 class="gallery-title">Detalle Interior A — Área de Charcutería</h3>
@@ -1996,8 +2014,8 @@
         </div>
 
         <!-- 12. Interior B Área de charcutería Nivel 2 -->
-        <div class="gallery-item" data-index="11" data-src="imagenes/Interior B Area de charcuteria Nivel 2.webp?v=1.4" data-title="Detalle Interior B — Área de Charcutería" data-desc="Equipamiento gastronómico especializado y modulación de almacenamiento refrigerado">
-          <img src="imagenes/Interior B Area de charcuteria Nivel 2.webp?v=1.4" alt="Interior B Área de charcutería Nivel 2" loading="lazy">
+        <div class="gallery-item" data-index="11" data-src="imagenes/Interior B Area de charcuteria Nivel 2.webp?v=1.5" data-title="Detalle Interior B — Área de Charcutería" data-desc="Equipamiento gastronómico especializado y modulación de almacenamiento refrigerado">
+          <img src="imagenes/Interior B Area de charcuteria Nivel 2.webp?v=1.5" alt="Interior B Área de charcutería Nivel 2" loading="lazy">
           <div class="gallery-item-overlay">
             <span class="gallery-tag">Nivel 2 • Detalle Charcutería B</span>
             <h3 class="gallery-title">Detalle Interior B — Área de Charcutería</h3>
@@ -2328,14 +2346,20 @@
   </section>
 
   <!-- ==========================================================================
-       LIGHTBOX COMPONENT
+       LIGHTBOX COMPONENT (PINCH ZOOM & PAN FLUIDO)
        ========================================================================== -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes">
     <div class="lightbox-topbar">
       <div class="lightbox-counter" id="lightboxCounter">1 / 12</div>
       <div class="lightbox-tools">
-        <button class="lightbox-btn" id="lightboxZoomBtn" title="Alternar Zoom (Doble Clic / Espacio)" aria-label="Zoom">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        <button class="lightbox-btn" id="lightboxZoomOutBtn" title="Reducir Zoom (-)" aria-label="Reducir Zoom">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+        <button class="lightbox-btn" id="lightboxZoomResetBtn" title="Restablecer Zoom (100%)" aria-label="Restablecer Zoom">
+          <span class="lightbox-zoom-badge" id="lightboxZoomBadge">100%</span>
+        </button>
+        <button class="lightbox-btn" id="lightboxZoomInBtn" title="Aumentar Zoom (+)" aria-label="Aumentar Zoom">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </button>
         <button class="lightbox-btn" id="lightboxCloseBtn" title="Cerrar (Esc)" aria-label="Cerrar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -2358,6 +2382,12 @@
     </button>
 
     <div class="lightbox-bottombar">
+      <div>
+        <div class="lightbox-hint-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          Pellizca con 2 dedos para zoom libre y arrastra para mover
+        </div>
+      </div>
       <div class="lightbox-caption-title" id="lightboxCaptionTitle">Título</div>
       <div class="lightbox-caption-desc" id="lightboxCaptionDesc">Descripción</div>
     </div>
@@ -2450,7 +2480,7 @@
       /* ------------------------------------------------------------------------
          0. AUTO-REFRESCO DE CACHÉ EN RECURSOS DINÁMICOS
          ------------------------------------------------------------------------ */
-      const currentBuild = '20260818_1640';
+      const currentBuild = '20260818_1650';
       const storedBuild = localStorage.getItem('ser_propatria_build');
       if (storedBuild && storedBuild !== currentBuild) {
         localStorage.setItem('ser_propatria_build', currentBuild);
@@ -2565,7 +2595,7 @@
       });
 
       /* ------------------------------------------------------------------------
-         4. GALERÍA & LIGHTBOX (SWIPE TÁCTIL, TECLADO, ZOOM)
+         4. GALERÍA & LIGHTBOX (PINCH-ZOOM LIBRE, ARRASTRE FLUIDO, TECLADO)
          ------------------------------------------------------------------------ */
       const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
       const lightbox = document.getElementById('lightbox');
@@ -2577,19 +2607,79 @@
       const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
       const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
       const lightboxNextBtn = document.getElementById('lightboxNextBtn');
-      const lightboxZoomBtn = document.getElementById('lightboxZoomBtn');
+      const lightboxZoomInBtn = document.getElementById('lightboxZoomInBtn');
+      const lightboxZoomOutBtn = document.getElementById('lightboxZoomOutBtn');
+      const lightboxZoomResetBtn = document.getElementById('lightboxZoomResetBtn');
+      const lightboxZoomBadge = document.getElementById('lightboxZoomBadge');
       const lightboxStage = document.getElementById('lightboxStage');
 
       let currentIndex = 0;
-      let isZoomed = false;
       let isStandaloneDirect = false;
 
-      // Lista de items de la galería
+      // Estado de zoom libre y arrastre
+      let scale = 1;
+      let posX = 0;
+      let posY = 0;
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      let initialPinchDistance = null;
+      let pinchStartScale = 1;
+      let lastTapTime = 0;
+
+      // Estado de swipe para navegación
+      let touchSwipeStartX = 0;
+      let touchSwipeStartY = 0;
+      let touchSwipeEndX = 0;
+      let touchSwipeEndY = 0;
+
       const galleryData = galleryItems.map(item => ({
         src: item.getAttribute('data-src'),
         title: item.getAttribute('data-title'),
         desc: item.getAttribute('data-desc')
       }));
+
+      function updateTransform(animate = false) {
+        if (animate) {
+          lightboxImgWrap.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
+        } else {
+          lightboxImgWrap.style.transition = 'none';
+        }
+        lightboxImgWrap.style.transform = `translate3d(${posX}px, ${posY}px, 0) scale(${scale})`;
+        
+        if (lightboxZoomBadge) {
+          lightboxZoomBadge.textContent = `${Math.round(scale * 100)}%`;
+        }
+
+        if (scale > 1.05) {
+          lightboxPrevBtn.style.opacity = '0.3';
+          lightboxNextBtn.style.opacity = '0.3';
+        } else {
+          lightboxPrevBtn.style.opacity = '';
+          lightboxNextBtn.style.opacity = '';
+        }
+      }
+
+      function setScale(newScale, targetPosX = posX, targetPosY = posY, animate = true) {
+        scale = Math.min(10, Math.max(1, newScale));
+        if (scale <= 1.02) {
+          scale = 1;
+          posX = 0;
+          posY = 0;
+        } else {
+          posX = targetPosX;
+          posY = targetPosY;
+        }
+        updateTransform(animate);
+      }
+
+      function resetZoom(animate = true) {
+        scale = 1;
+        posX = 0;
+        posY = 0;
+        initialPinchDistance = null;
+        updateTransform(animate);
+      }
 
       function showLightboxImage(index) {
         if (index < 0) index = galleryData.length - 1;
@@ -2603,7 +2693,7 @@
         lightboxCaptionTitle.textContent = item.title;
         lightboxCaptionDesc.textContent = item.desc;
 
-        resetZoom();
+        resetZoom(false);
       }
 
       function openLightbox(index) {
@@ -2616,7 +2706,6 @@
         document.body.style.overflow = 'hidden';
       }
 
-      // Función global para abrir cualquier imagen externa (p. ej. planos)
       window.openLightboxDirect = function(src, title, desc) {
         isStandaloneDirect = true;
         lightboxImg.src = src;
@@ -2627,7 +2716,7 @@
         lightboxCaptionTitle.textContent = title;
         lightboxCaptionDesc.textContent = desc;
 
-        resetZoom();
+        resetZoom(false);
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
       };
@@ -2635,7 +2724,7 @@
       function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
-        resetZoom();
+        resetZoom(false);
       }
 
       function prevLightboxImage() {
@@ -2648,21 +2737,7 @@
         showLightboxImage(currentIndex + 1);
       }
 
-      function toggleZoom() {
-        isZoomed = !isZoomed;
-        lightboxImgWrap.classList.toggle('zoomed', isZoomed);
-        if (!isZoomed) {
-          lightboxImgWrap.style.transform = '';
-        }
-      }
-
-      function resetZoom() {
-        isZoomed = false;
-        lightboxImgWrap.classList.remove('zoomed');
-        lightboxImgWrap.style.transform = '';
-      }
-
-      // Event Listeners de la galería
+      // Event Listeners para items de la galería
       galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => openLightbox(index));
       });
@@ -2670,69 +2745,170 @@
       lightboxCloseBtn.addEventListener('click', closeLightbox);
       lightboxPrevBtn.addEventListener('click', prevLightboxImage);
       lightboxNextBtn.addEventListener('click', nextLightboxImage);
-      lightboxZoomBtn.addEventListener('click', toggleZoom);
 
-      // Cerrar al hacer clic fuera de la imagen
+      // Controles de botones de Zoom
+      if (lightboxZoomInBtn) {
+        lightboxZoomInBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setScale(scale * 1.5, posX, posY, true);
+        });
+      }
+
+      if (lightboxZoomOutBtn) {
+        lightboxZoomOutBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setScale(scale / 1.5, posX, posY, true);
+        });
+      }
+
+      if (lightboxZoomResetBtn) {
+        lightboxZoomResetBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (scale > 1.2) {
+            resetZoom(true);
+          } else {
+            setScale(2.5, 0, 0, true);
+          }
+        });
+      }
+
+      // Zoom y Arrastre con Ratón en Computadoras
+      lightboxStage.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 1.25 : 0.8;
+        setScale(scale * delta, posX, posY, true);
+      }, { passive: false });
+
+      lightboxImgWrap.addEventListener('mousedown', (e) => {
+        if (scale > 1.05) {
+          isDragging = true;
+          dragStartX = e.clientX - posX;
+          dragStartY = e.clientY - posY;
+          lightboxImgWrap.classList.add('dragging');
+        }
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          posX = e.clientX - dragStartX;
+          posY = e.clientY - dragStartY;
+          updateTransform(false);
+        }
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          lightboxImgWrap.classList.remove('dragging');
+        }
+      });
+
+      // Cierre al hacer clic fuera del contenido en escala 1
       lightboxStage.addEventListener('click', (e) => {
-        if (e.target === lightboxStage) {
+        if (e.target === lightboxStage && scale <= 1.05) {
           closeLightbox();
         }
       });
 
-      // Doble clic para zoom
-      lightboxImgWrap.addEventListener('dblclick', toggleZoom);
-
-      // Navegación por teclado
+      // Navegación por Teclado
       document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
 
         if (e.key === 'Escape') {
           closeLightbox();
         } else if (e.key === 'ArrowLeft') {
-          prevLightboxImage();
+          if (scale <= 1.05) prevLightboxImage();
         } else if (e.key === 'ArrowRight') {
-          nextLightboxImage();
-        } else if (e.key === ' ' || e.key === 'Spacebar') {
+          if (scale <= 1.05) nextLightboxImage();
+        } else if (e.key === '+' || e.key === '=') {
+          setScale(scale * 1.4, posX, posY, true);
+        } else if (e.key === '-' || e.key === '_') {
+          setScale(scale / 1.4, posX, posY, true);
+        } else if (e.key === '0' || e.key === ' ' || e.key === 'Spacebar') {
           e.preventDefault();
-          toggleZoom();
+          if (scale > 1.2) resetZoom(true);
+          else setScale(2.5, 0, 0, true);
         }
       });
 
       /* ------------------------------------------------------------------------
-         5. GESTOS TÁCTILES (SWIPE EN MÓVILES)
+         5. GESTOS TÁCTILES: PINCH-TO-ZOOM LIBRE, ARRASTRE Y NAVEGACIÓN
          ------------------------------------------------------------------------ */
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchEndX = 0;
-      let touchEndY = 0;
-
       lightboxStage.addEventListener('touchstart', (e) => {
-        if (isZoomed) return;
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
+        if (e.touches.length === 2) {
+          // Inicio de Pellizco (Pinch Zoom)
+          initialPinchDistance = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          pinchStartScale = scale;
+        } else if (e.touches.length === 1) {
+          // Detección de Doble Toque (Double Tap)
+          const now = Date.now();
+          if (now - lastTapTime < 300) {
+            if (scale > 1.2) {
+              resetZoom(true);
+            } else {
+              setScale(2.5, 0, 0, true);
+            }
+            lastTapTime = 0;
+            return;
+          }
+          lastTapTime = now;
+
+          // Registro de posición para mover o deslizar
+          dragStartX = e.touches[0].clientX - posX;
+          dragStartY = e.touches[0].clientY - posY;
+          touchSwipeStartX = e.touches[0].clientX;
+          touchSwipeStartY = e.touches[0].clientY;
+        }
       }, { passive: true });
+
+      lightboxStage.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2 && initialPinchDistance) {
+          e.preventDefault();
+          const currentDistance = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          const pinchFactor = currentDistance / initialPinchDistance;
+          // Zoom libre sin límite artificial (hasta 10x)
+          scale = Math.min(10, Math.max(0.8, pinchStartScale * pinchFactor));
+          updateTransform(false);
+        } else if (e.touches.length === 1 && scale > 1.05) {
+          e.preventDefault();
+          posX = e.touches[0].clientX - dragStartX;
+          posY = e.touches[0].clientY - dragStartY;
+          updateTransform(false);
+        }
+      }, { passive: false });
 
       lightboxStage.addEventListener('touchend', (e) => {
-        if (isZoomed || isStandaloneDirect) return;
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-      }, { passive: true });
+        if (e.touches.length < 2) {
+          initialPinchDistance = null;
+        }
 
-      function handleSwipe() {
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-        const threshold = 45; // Distancia mínima en px
+        if (scale < 1) {
+          resetZoom(true);
+          return;
+        }
 
-        // Verificar que el movimiento fue principalmente horizontal
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
-          if (diffX < 0) {
-            nextLightboxImage(); // Deslizar izquierda -> siguiente
-          } else {
-            prevLightboxImage(); // Deslizar derecha -> anterior
+        if (e.changedTouches.length > 0 && scale <= 1.05 && !isStandaloneDirect) {
+          touchSwipeEndX = e.changedTouches[0].clientX;
+          touchSwipeEndY = e.changedTouches[0].clientY;
+          const diffX = touchSwipeEndX - touchSwipeStartX;
+          const diffY = touchSwipeEndY - touchSwipeStartY;
+          const threshold = 45;
+
+          if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+            if (diffX < 0) {
+              nextLightboxImage();
+            } else {
+              prevLightboxImage();
+            }
           }
         }
-      }
+      }, { passive: true });
     });
   </script>
 </body>
