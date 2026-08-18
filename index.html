@@ -1426,14 +1426,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem;
+      padding: 0.2rem;
       overflow: hidden;
       touch-action: none;
     }
 
     .lightbox-img-wrap {
-      max-width: 96vw;
-      max-height: 82vh;
+      max-width: 98vw;
+      max-height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1443,6 +1443,8 @@
       touch-action: none;
       transform-origin: center center;
       will-change: transform;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
     }
 
     .lightbox-img-wrap.dragging {
@@ -1450,17 +1452,24 @@
     }
 
     .lightbox-img {
-      max-width: 96vw;
-      max-height: 82vh;
+      max-width: 98vw;
+      max-height: 90vh;
       width: auto;
       height: auto;
       object-fit: contain;
       border-radius: var(--radius-sm);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95);
       pointer-events: none;
       user-select: none;
       -webkit-user-drag: none;
       transition: opacity 0.2s ease;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      image-rendering: high-quality;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
     }
 
     .lightbox-zoom-badge {
@@ -1473,23 +1482,6 @@
       border-radius: var(--radius-full);
       min-width: 48px;
       text-align: center;
-    }
-
-    .lightbox-hint-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      background: rgba(18, 20, 26, 0.85);
-      border: 1px solid var(--border-subtle);
-      padding: 0.3rem 0.8rem;
-      border-radius: var(--radius-full);
-      margin-bottom: 0.4rem;
-    }
-
-    .lightbox-hint-pill svg {
-      color: var(--brand-orange);
     }
 
     .lightbox-nav-btn {
@@ -1523,27 +1515,12 @@
       .lightbox-prev { left: 0.4rem; width: 40px; height: 40px; }
       .lightbox-next { right: 0.4rem; width: 40px; height: 40px; }
       .lightbox-topbar { padding: 0.8rem 1rem; }
-      .lightbox-bottombar { padding: 0.8rem 1rem 1.5rem 1rem; }
       .lightbox-btn { width: 38px; height: 38px; }
-    }
-
-    .lightbox-bottombar {
-      padding: 1rem 2rem 1.5rem 2rem;
-      text-align: center;
-      z-index: 2010;
-      background: linear-gradient(to top, rgba(8, 9, 12, 0.98), rgba(8, 9, 12, 0.7) 70%, transparent);
-    }
-
-    .lightbox-caption-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 0.2rem;
-    }
-
-    .lightbox-caption-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+      .lightbox-img-wrap,
+      .lightbox-img {
+        max-width: 99vw;
+        max-height: 92vh;
+      }
     }
 
     /* ==========================================================================
@@ -2063,41 +2040,53 @@
 
         <!-- Contenido Tab Nivel 1 -->
         <div class="tab-content active" id="tab-nivel-1" role="tabpanel">
-          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 1.png?v=1.4', 'Plano Arquitectónico 2D — Nivel 1', 'Distribución de Planta Baja: Acceso, Paquetería, Batería de Cajas y Pasillos de Autoservicio')">
+          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 1.png?v=1.5', 'Plano Arquitectónico 2D — Nivel 1', 'Distribución de Planta Baja: Acceso, Paquetería, Batería de Cajas y Pasillos de Autoservicio')">
             <div class="blueprint-overlay-tag">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               Ver en Pantalla Completa
             </div>
-            <img src="imagenes/Vista Plano 2D Nivel 1.png?v=1.4" alt="Vista Plano 2D Nivel 1 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
+            <img src="imagenes/Vista Plano 2D Nivel 1.png?v=1.5" alt="Vista Plano 2D Nivel 1 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
           </div>
           <div class="blueprint-bottom-info">
             <div>
               <div class="blueprint-title-text">Nivel 1: Zonificación de Acceso, Autoservicio y Cajas</div>
               <div class="blueprint-sub-text">Dimensiones generales, modulación estructural y circulaciones de planta baja.</div>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg?v=1.4" download class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">
-              Descargar DWG Nivel 1
-            </a>
+            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+              <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf?v=1.5" target="_blank" rel="noopener noreferrer" class="btn btn-orange" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Abrir PDF Vectorial
+              </a>
+              <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg?v=1.5" download class="btn btn-outline" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
+                Descargar DWG Nivel 1
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Contenido Tab Nivel 2 -->
         <div class="tab-content" id="tab-nivel-2" role="tabpanel">
-          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 2.png?v=1.4', 'Plano Arquitectónico 2D — Nivel 2', 'Distribución de Planta Alta: Autoservicios, Frutería y Área de Charcutería')">
+          <div class="blueprint-preview-box" onclick="openLightboxDirect('imagenes/Vista Plano 2D Nivel 2.png?v=1.5', 'Plano Arquitectónico 2D — Nivel 2', 'Distribución de Planta Alta: Autoservicios, Frutería y Área de Charcutería')">
             <div class="blueprint-overlay-tag">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               Ver en Pantalla Completa
             </div>
-            <img src="imagenes/Vista Plano 2D Nivel 2.png?v=1.4" alt="Vista Plano 2D Nivel 2 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
+            <img src="imagenes/Vista Plano 2D Nivel 2.png?v=1.5" alt="Vista Plano 2D Nivel 2 Supermercado SER Propatria" class="blueprint-img" loading="lazy">
           </div>
           <div class="blueprint-bottom-info">
             <div>
               <div class="blueprint-title-text">Nivel 2: Autoservicios, Frutería y Área de Charcutería</div>
               <div class="blueprint-sub-text">Mobiliario comercial, mostradores frigoríficos, islas y autoservicio.</div>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg?v=1.4" download class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">
-              Descargar DWG Nivel 2
-            </a>
+            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+              <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf?v=1.5" target="_blank" rel="noopener noreferrer" class="btn btn-orange" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Abrir PDF Vectorial
+              </a>
+              <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg?v=1.5" download class="btn btn-outline" style="padding: 0.5rem 1.1rem; font-size: 0.8rem;">
+                Descargar DWG Nivel 2
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -2123,7 +2112,7 @@
               </div>
               <p class="dl-desc">Plano general unificado con plantas, cotas, zonificación y membrete oficial listo para imprimir.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf?v=1.4" download="Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf" class="btn btn-orange dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf?v=1.5" download="Supermercado Ser Propatria Nivel 1 y 2-Layout1.pdf" class="btn btn-orange dl-btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               Descargar PDF Completo
             </a>
@@ -2141,7 +2130,7 @@
               </div>
               <p class="dl-desc">Archivo CAD editable con capas, bloques de equipamiento y ejes de ambos niveles.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2.dwg?v=1.4" download="Supermercado Ser Propatria Nivel 1 y 2.dwg" class="btn btn-secondary dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1 y 2.dwg?v=1.5" download="Supermercado Ser Propatria Nivel 1 y 2.dwg" class="btn btn-secondary dl-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               DWG Completo
             </a>
@@ -2159,7 +2148,7 @@
               </div>
               <p class="dl-desc">Detalle específico de planta baja: accesos, paquetería, cajas y autoservicio.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg?v=1.4" download="Supermercado Ser Propatria Nivel 1.dwg" class="btn btn-secondary dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 1.dwg?v=1.5" download="Supermercado Ser Propatria Nivel 1.dwg" class="btn btn-secondary dl-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               DWG Nivel 1
             </a>
@@ -2177,7 +2166,7 @@
               </div>
               <p class="dl-desc">Detalle específico de planta alta: autoservicios, frutería, islas y charcutería.</p>
             </div>
-            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg?v=1.4" download="Supermercado Ser Propatria Nivel 2.dwg" class="btn btn-secondary dl-btn">
+            <a href="documentos/Supermercado Ser Propatria Nivel 2.dwg?v=1.5" download="Supermercado Ser Propatria Nivel 2.dwg" class="btn btn-secondary dl-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               DWG Nivel 2
             </a>
@@ -2380,17 +2369,6 @@
     <button class="lightbox-nav-btn lightbox-next" id="lightboxNextBtn" title="Siguiente (Flecha Derecha)" aria-label="Imagen Siguiente">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
     </button>
-
-    <div class="lightbox-bottombar">
-      <div>
-        <div class="lightbox-hint-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-          Pellizca con 2 dedos para zoom libre y arrastra para mover
-        </div>
-      </div>
-      <div class="lightbox-caption-title" id="lightboxCaptionTitle">Título</div>
-      <div class="lightbox-caption-desc" id="lightboxCaptionDesc">Descripción</div>
-    </div>
   </div>
 
   <!-- ==========================================================================
@@ -2480,7 +2458,7 @@
       /* ------------------------------------------------------------------------
          0. AUTO-REFRESCO DE CACHÉ EN RECURSOS DINÁMICOS
          ------------------------------------------------------------------------ */
-      const currentBuild = '20260818_1650';
+      const currentBuild = '20260818_1710';
       const storedBuild = localStorage.getItem('ser_propatria_build');
       if (storedBuild && storedBuild !== currentBuild) {
         localStorage.setItem('ser_propatria_build', currentBuild);
@@ -2602,8 +2580,6 @@
       const lightboxImg = document.getElementById('lightboxImg');
       const lightboxImgWrap = document.getElementById('lightboxImgWrap');
       const lightboxCounter = document.getElementById('lightboxCounter');
-      const lightboxCaptionTitle = document.getElementById('lightboxCaptionTitle');
-      const lightboxCaptionDesc = document.getElementById('lightboxCaptionDesc');
       const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
       const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
       const lightboxNextBtn = document.getElementById('lightboxNextBtn');
@@ -2687,11 +2663,10 @@
         currentIndex = index;
 
         const item = galleryData[currentIndex];
+        lightboxImg.decoding = 'sync';
         lightboxImg.src = item.src;
         lightboxImg.alt = item.title;
         lightboxCounter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
-        lightboxCaptionTitle.textContent = item.title;
-        lightboxCaptionDesc.textContent = item.desc;
 
         resetZoom(false);
       }
@@ -2708,13 +2683,12 @@
 
       window.openLightboxDirect = function(src, title, desc) {
         isStandaloneDirect = true;
+        lightboxImg.decoding = 'sync';
         lightboxImg.src = src;
-        lightboxImg.alt = title;
+        lightboxImg.alt = title || 'Plano';
         lightboxCounter.style.display = 'none';
         lightboxPrevBtn.style.display = 'none';
         lightboxNextBtn.style.display = 'none';
-        lightboxCaptionTitle.textContent = title;
-        lightboxCaptionDesc.textContent = desc;
 
         resetZoom(false);
         lightbox.classList.add('active');
